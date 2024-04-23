@@ -1,7 +1,11 @@
 /** findIndex: return index of val in arr (or -1 if val is not present). */
 
 function findIndex(arr: number[], val: number): number {
-  return 42;
+  if (arr.length === 0) return -1;
+
+  if (arr[arr.length - 1] === val) return arr.length - 1;
+
+  return findIndex(arr.slice(0, arr.length-1), val);
 }
 
 export { findIndex };
